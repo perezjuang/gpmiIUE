@@ -37,6 +37,25 @@ class DemoIueJgpApplicationTests {
 	// nombre
 	// WHEN: Cuando invoco la URL
 	// THEN: El servicio responde el Saludo con mi nombre: Hello, Juan!
+	
+	
+	@Test
+	void Test0() throws Exception {
+			RequestBuilder request = get("/greeting").param("name", "IUE");	
+			
+			ResultMatcher requestExpected = jsonPath("$.content")
+											.value("Hello, IUE!");	
+			
+			this.mockMvc.perform(request)
+					.andDo(print()).andExpect(status().isOk())
+					.andExpect(requestExpected);
+			
+			
+		}
+	
+	
+	
+	
 	/***
 	 * 
 	 * Test 1
