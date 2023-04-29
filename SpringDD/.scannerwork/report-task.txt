@@ -1,0 +1,6 @@
+projectKey=IUE_DEMO
+serverUrl=http://localhost:9000
+serverVersion=9.9.0.65466
+dashboardUrl=http://localhost:9000/dashboard?id=IUE_DEMO
+ceTaskId=AYfNVPrUmPnfBxqc6Lj7
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYfNVPrUmPnfBxqc6Lj7

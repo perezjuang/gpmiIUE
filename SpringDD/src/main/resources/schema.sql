@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS ProjectType;
+  
+CREATE TABLE ProjectType (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  description VARCHAR(250) NOT NULL,
+  typeOfProyect VARCHAR(250) NOT NULL
+);
