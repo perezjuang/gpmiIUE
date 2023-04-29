@@ -3,6 +3,8 @@ package com.app;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,10 +33,11 @@ public class EmployeeControllerIntegrationTests
 	//@Sql({"/import_senior_employees.sql"})
 	public void testAllEmployees() 
 	{
-		assertTrue(
-				this.restTemplate
-					.getForObject("http://localhost:" + port + "/api/employeeCustomAPI/employeegetall", Employees.class)
-					.getEmployeeList().size() >= 1);
+		List<Employee> employees = this.restTemplate
+		.getForObject("http://localhost:" + port + "/api/employeeCustomAPI/employeegetall", Employees.class)
+		.getEmployeeList();
+				
+		assertTrue(employees.size() >= 1);
 	}
 
 	@Test
