@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React,{ component, Component } from 'react';
+
 class Stateful extends Component{
     constructor(props){
         super(props)
         this.state = {
-            hello: 'Hola IUE desde una propiedad que puede ser modificada'
+            hello: 'Hola IUE'
         }
     }
     render(){
@@ -12,4 +13,5 @@ class Stateful extends Component{
         )
     }
 }
+
 export default Stateful;
