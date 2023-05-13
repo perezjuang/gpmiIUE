@@ -1,5 +1,6 @@
 package com.app;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,6 +25,18 @@ public class GreetingController {
 		return saludo;
 	}
 			
+	@GetMapping(path="/greetingSleep", produces="application/json")
+	public Greeting greetingSleep(@RequestParam(value = "name",
+											defaultValue = "World") String name) {
+		try {
+			TimeUnit.SECONDS.sleep(20);
+			return new Greeting(counter.incrementAndGet(), String.format(template, name));
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 
 	
 	

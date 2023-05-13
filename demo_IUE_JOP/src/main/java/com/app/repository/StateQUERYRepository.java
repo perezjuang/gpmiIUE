@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.app.entity.State;
 
-@RepositoryRestResource(collectionResourceRel = "state", path = "states")
+@RepositoryRestResource(collectionResourceRel = "states", path = "states")
 public interface StateQUERYRepository extends PagingAndSortingRepository<State, Long>{
 	List<State> findByStateName(@Param("stateName") String stateName);
 }

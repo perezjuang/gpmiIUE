@@ -1,3 +1,3 @@
-INSERT INTO STATE (stateName, description) VALUES
+INSERT INTO STATE (stateName, descripcion) VALUES
   ('Activo', 'Act')
   ;

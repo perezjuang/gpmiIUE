@@ -21,16 +21,16 @@ public class State {
 	
 	private  Long id;
 	private String stateName;
-	private String description;
+	private String descripcion;
 	
 	public State() {}
 
 
-	public State(Long id, String stateName, String description) {
+	public State(Long id, String stateName, String descripcion) {
 		super();
 		this.id = id;
 		this.stateName = stateName;
-		this.description = description;
+		this.descripcion = descripcion;
 	}
 	
 	@Override
@@ -43,7 +43,7 @@ public class State {
 		
 		return Objects.equals(id, state.id) &&
 				Objects.equals(stateName, state.stateName) &&
-				Objects.equals(description, state.description);
+				Objects.equals(descripcion, state.descripcion);
 		
 		
 	}
@@ -51,7 +51,7 @@ public class State {
 	@Override
 	public int hashCode() {
 		
-		return Objects.hash(id, stateName, description);
+		return Objects.hash(id, stateName, descripcion);
 		
 	}
 
@@ -76,19 +76,19 @@ public class State {
 	}
 
 
-	public String getDescription() {
-		return description;
+	public String getdescripcion() {
+		return descripcion;
 	}
 
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setdescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 
 	@Override
 	public String toString() {
-		return "State [id=" + id + ", stateName=" + stateName + ", description=" + description + "]";
+		return "State [id=" + id + ", stateName=" + stateName + ", descripcion=" + descripcion + "]";
 	}
 
 
