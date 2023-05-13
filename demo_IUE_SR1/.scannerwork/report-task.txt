@@ -2,5 +2,5 @@ projectKey=IUE_DEMO
 serverUrl=http://localhost:9000
 serverVersion=10.0.0.68432
 dashboardUrl=http://localhost:9000/dashboard?id=IUE_DEMO
-ceTaskId=AYfa3FAKEyxCO0RxE-om
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYfa3FAKEyxCO0RxE-om
+ceTaskId=AYfxS0mTMoi3HWJrY2Nw
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYfxS0mTMoi3HWJrY2Nw
