@@ -37,7 +37,7 @@ public class TaskController {
 		return task;
 	}
 
-
+  //CASDASd
   
 	//***API Final Front
 	@CrossOrigin(origins = "*")
@@ -55,7 +55,7 @@ public class TaskController {
 	@PostMapping(path="/taskremove", consumes = "application/json")
 	public @ResponseBody ResponseEntity<String> deleteTaskApi(@RequestBody Task task){
 		taskRepository.deleteById(task.getTaskId());
-		return new ResponseEntity<String>(HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	// Otras formas pero Bajo JUnit Testing
