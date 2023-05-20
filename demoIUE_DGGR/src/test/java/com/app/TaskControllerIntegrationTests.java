@@ -34,7 +34,7 @@ public class TaskControllerIntegrationTests {
 		Task task = new Task((long)12,"Lokesh", "Gupta", "01-01-2023", "02-02-2023");
 
 		ResponseEntity<Task> responseEntity = this.restTemplate
-			.postForEntity("http://localhost:" + port + "/api/taskCustomAPI/addtask", task, Task.class);
+			.postForEntity("http://localhost:" + port + "/taskAPI/addtask", task, Task.class);
 
 		assertEquals(responseEntity.getStatusCode().toString(), "200 OK");
 		assertEquals(task.getTaskName(), responseEntity.getBody().getTaskName());
@@ -44,7 +44,7 @@ public class TaskControllerIntegrationTests {
 	//@Sql({"/import_senior_employees.sql"})
 	public void testAllTasks(){
 		List<Task> tasks = this.restTemplate
-		.getForObject("http://localhost:" + port + "/api/taskCustomAPI/taskgetallju", Tasks.class)
+		.getForObject("http://localhost:" + port + "/taskAPI/taskgetallju", Tasks.class)
 		.getTaskList();
 				
 		assertTrue(tasks.size() >= 1); //Si queda con 1 no funciona, si queda con 0 funciona
