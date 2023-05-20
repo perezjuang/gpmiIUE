@@ -21,7 +21,7 @@ import com.app.repository.TaskQUERYRepository;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*") //https://www.baeldung.com/spring-cors
-@RequestMapping("/api/taskCustomAPI")
+@RequestMapping("/taskAPI")
 public class TaskController {
 	@Autowired
 	private TaskCRUDRepository taskRepository;
@@ -37,7 +37,16 @@ public class TaskController {
 		return task;
 	}
 
-  //CASDASd
+  ////***API Final for Front
+	@CrossOrigin(origins = "*")
+	@GetMapping(path="/taskgetall", produces = "application/json")
+	public Tasks getAllTaskApi() {
+		Tasks response = new Tasks();
+		ArrayList<Task> list = new ArrayList<>();
+		taskRepository.findAll().forEach(e -> list.add(e));
+		response.setTaskList(list);
+		return response;
+	}
   
 	//***API Final Front
 	@CrossOrigin(origins = "*")
@@ -47,8 +56,7 @@ public class TaskController {
 		taskRepository.save(task);
 		return task;
 	}
-	
-	
+
 	
 	//***API Final Front
 	@CrossOrigin(origins = "*")
@@ -58,8 +66,8 @@ public class TaskController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	// Otras formas pero Bajo JUnit Testing
-	@GetMapping(path ="/taskgetall", produces = "application/json")
+ // Otras formas pero Bajo JUnit Testing
+	@GetMapping(path ="/taskgetallju", produces = "application/json")
 	public Tasks getTasks() {
 		Tasks response = new Tasks();
 		ArrayList<Task> list = new ArrayList<>();
@@ -77,8 +85,6 @@ public class TaskController {
 		//Send location in response
 		return ResponseEntity.created(location).build();
 	}
-
-	
 	
 	
 	

@@ -44,7 +44,7 @@ public class TaskControllerIntegrationTests {
 	//@Sql({"/import_senior_employees.sql"})
 	public void testAllTasks(){
 		List<Task> tasks = this.restTemplate
-		.getForObject("http://localhost:" + port + "/api/taskCustomAPI/taskgetall", Tasks.class)
+		.getForObject("http://localhost:" + port + "/api/taskCustomAPI/taskgetallju", Tasks.class)
 		.getTaskList();
 				
 		assertTrue(tasks.size() >= 1); //Si queda con 1 no funciona, si queda con 0 funciona

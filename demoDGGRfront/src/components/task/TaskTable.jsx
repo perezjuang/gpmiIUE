@@ -1,6 +1,6 @@
 import React from "react";
 
-const TaskTable = () => (
+const TaskTable = (props) => (
     <table>
         <thead>
             <tr>
@@ -12,17 +12,38 @@ const TaskTable = () => (
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>ID from DB</td>
-                <td>Task_Name</td>
-                <td>Tast_Description</td>
-                <td>Start_Date</td>
-                <td>Finish_Date</td>
-                <td>
-                    <button className="button muted-button"> Edit </button>
-                    <button className="button muted-button"> Delete </button>
-                </td>
-            </tr>
+        {undefined !== props.tasks && props.tasks.length > 0 ? (
+        props.tasks.map((task) => (
+          <tr key={task.taskId.toString()}>
+            <td>{task.taskId}</td>
+            <td>{task.taskName}</td>
+            <td>{task.taskDescription}</td>
+            <td>{task.startDate}</td>
+            <td>{task.finishDate}</td>
+            <td>
+              <button
+                onClick={() => {
+                  props.editRow(task);
+                }}
+                className="button muted-button"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => props.deleteTask(task.taskId)}
+                className="button muted-button"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        ))
+      ) : (
+        <tr>
+          <td colSpan={3}>No Task</td>
+        </tr>
+      )}
+
         </tbody>
     </table>
 );
