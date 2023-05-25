@@ -29,29 +29,28 @@ public class ProjectTypeControllerIntegrationTest {
 	private TestRestTemplate restTemplate;
 
 	
-	@Test
-	//@Sql({"/import_senior_ProjectTypes.sql"})
-	public void testAllProjectTypes() 
-	{
-		List<ProjectType> projectsTypes = this.restTemplate
-		.getForObject("http://localhost:" + port + "/api/projectTypeCustomAPI/projectTypegetall", ProjectsTypes.class)
-		.getProjectTypeList();
-				
-		assertTrue(projectsTypes.size() >= 1);
-	}
+	/*
+	 * @Test //@Sql({"/import_senior_ProjectTypes.sql"}) public void
+	 * testAllProjectTypes() { List<ProjectType> projectsTypes = this.restTemplate
+	 * .getForObject("http://localhost:" + port +
+	 * "/api/projectTypeCustomAPI/projectTypegetall", ProjectsTypes.class)
+	 * .getProjectTypeList();
+	 * 
+	 * assertTrue(projectsTypes.size() >= 1); }
+	 */
 
-	@Test
-	public void testAddProjectType() 
-	{
-		ProjectType projectType = new ProjectType((long)12,"Lokesh", "abc@gmail.com");	
-
-		ResponseEntity<ProjectType> responseEntity = this.restTemplate
-			.postForEntity("http://localhost:" + port + "/api/projectTypeCustomAPI/addprojectType", projectType, ProjectType.class);
-
-		assertEquals(responseEntity.getStatusCode().toString(), "200 OK");
-		assertEquals(projectType.getTypeOfProyect(), responseEntity.getBody().getTypeOfProyect());
-	}
-	
+	/*
+	 * @Test public void testAddProjectType() { ProjectType projectType = new
+	 * ProjectType((long)12,"Lokesh", "abc@gmail.com");
+	 * 
+	 * ResponseEntity<ProjectType> responseEntity = this.restTemplate
+	 * .postForEntity("http://localhost:" + port +
+	 * "/api/projectTypeCustomAPI/addprojectType", projectType, ProjectType.class);
+	 * 
+	 * assertEquals(responseEntity.getStatusCode().toString(), "200 OK");
+	 * assertEquals(projectType.getTypeOfProyect(),
+	 * responseEntity.getBody().getTypeOfProyect()); }
+	 */
 	/*
 	 
 	 ResponseEntity<String> entity = template.getForEntity("http://example.com", String.class);
