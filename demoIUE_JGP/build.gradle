@@ -17,7 +17,6 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	//Interactuar con HTML
-	implementation 'org.springframework:spring-web:6.0.7'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	
 	//Interactuar con JSON
