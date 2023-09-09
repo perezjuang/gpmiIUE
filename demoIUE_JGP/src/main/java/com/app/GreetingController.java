@@ -27,7 +27,7 @@ public class GreetingController {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 	
-	@GetMapping(path="/greetingOK", produces = "application/json")
+	@GetMapping(path="/greetingSleep", produces = "application/json")
 	public ResponseEntity<String> customHeader(@RequestParam(value = "name", defaultValue = "World") String name) {
 	    
 		HttpHeaders headers = new HttpHeaders();
@@ -39,7 +39,7 @@ public class GreetingController {
 	    
 		try {
 			jsonString = mapper.writeValueAsString(greeting);
-			TimeUnit.SECONDS.sleep(10);
+			TimeUnit.SECONDS.sleep(20);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
